@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1718649144 source:c:\users\rodrigovaraldo\desktop\trabajopráctico\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TiposDeDatos\Arbol.h"
+	"TiposDeDatos\fecha.h"
+	"TiposDeDatos\socio.h"
+
+1718657956 source:c:\users\rodrigovaraldo\desktop\trabajopráctico\tiposdedatos\arbol.c
+	"Arbol.h"
+
+1718660033 source:c:\users\rodrigovaraldo\desktop\trabajopráctico\tiposdedatos\socio.c
+	"socio.h"
+	<string.h>
+
+1718465971 source:c:\users\rodrigovaraldo\desktop\trabajopráctico\tiposdedatos\fecha.c
+	"fecha.h"
+
+1718465971 c:\users\rodrigovaraldo\desktop\trabajopráctico\tiposdedatos\fecha.h
+
+1718466852 c:\users\rodrigovaraldo\desktop\trabajopráctico\tiposdedatos\socio.h
+	"fecha.h"
+
+1718659699 c:\users\rodrigovaraldo\desktop\trabajopráctico\tiposdedatos\arbol.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utilidades.h"
+
+1718659858 source:c:\users\rodrigovaraldo\desktop\trabajopráctico\tiposdedatos\indice.c
+	"indice.h"
+
+1718658713 c:\users\rodrigovaraldo\desktop\trabajopráctico\tiposdedatos\indice.h
+	"Arbol.h"
+	"utilidades.h"
+
+1718660033 c:\users\rodrigovaraldo\desktop\trabajopráctico\tiposdedatos\utilidades.h
+
