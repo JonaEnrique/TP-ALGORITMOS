@@ -48,6 +48,10 @@
 		</Unit>
 		<Unit filename="TiposDeDatos/socio.h" />
 		<Unit filename="TiposDeDatos/utilidades.h" />
+		<Unit filename="generacionIndice.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="generacionIndice.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
