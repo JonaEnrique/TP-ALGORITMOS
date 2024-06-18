@@ -36,3 +36,51 @@
 
 1718660033 c:\users\rodrigovaraldo\desktop\trabajopráctico\tiposdedatos\utilidades.h
 
+1718661935 source:c:\users\rodrigovaraldo\desktop\tp-algoritmos\tiposdedatos\arbol.c
+	"Arbol.h"
+
+1718661935 c:\users\rodrigovaraldo\desktop\tp-algoritmos\tiposdedatos\arbol.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utilidades.h"
+
+1718661935 c:\users\rodrigovaraldo\desktop\tp-algoritmos\tiposdedatos\utilidades.h
+
+1718661935 source:c:\users\rodrigovaraldo\desktop\tp-algoritmos\tiposdedatos\fecha.c
+	"fecha.h"
+
+1718661935 c:\users\rodrigovaraldo\desktop\tp-algoritmos\tiposdedatos\fecha.h
+
+1718661935 source:c:\users\rodrigovaraldo\desktop\tp-algoritmos\tiposdedatos\indice.c
+	"indice.h"
+
+1718661935 c:\users\rodrigovaraldo\desktop\tp-algoritmos\tiposdedatos\indice.h
+	"Arbol.h"
+	"utilidades.h"
+
+1718661935 source:c:\users\rodrigovaraldo\desktop\tp-algoritmos\tiposdedatos\socio.c
+	"socio.h"
+	<string.h>
+
+1718661935 c:\users\rodrigovaraldo\desktop\tp-algoritmos\tiposdedatos\socio.h
+	"fecha.h"
+
+1718678210 source:c:\users\rodrigovaraldo\desktop\tp-algoritmos\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TiposDeDatos\Arbol.h"
+	"TiposDeDatos\fecha.h"
+	"TiposDeDatos\socio.h"
+	"generacionIndice.h"
+
+1718677806 source:c:\users\rodrigovaraldo\desktop\tp-algoritmos\generacionindice.c
+	"generacionIndice.h"
+
+1718677023 c:\users\rodrigovaraldo\desktop\tp-algoritmos\generacionindice.h
+	"TiposDeDatos/utilidades.h"
+	"TiposDeDatos/socio.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
