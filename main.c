@@ -7,16 +7,24 @@
 
 int main()
 {
-    void* reg=malloc(sizeof(unsigned)+sizeof(long));
-    txtABin("archivos/socios.csv","archivos/socios.dat");
-    construirIndice("archivos/socios.dat");
-    FILE* pfind=fopen("archivos/socios.idx","rb");
-    fread(reg,sizeof(unsigned)+sizeof(long),1,pfind);
-    while(!feof(pfind))
+    FILE* pIdx;
+    char pathArchCsv[50];
+    tIndice indiceSocios;
+    indCrear(&indiceSocios,sizeof(long),compararSocios);
+    pIdx = fopen("archivo/socios.idx","rb");
+    if(!pIdx)
     {
-        printf("%ld %u",*(long*)reg);
-        fread(reg,sizeof(unsigned)+sizeof(long),1,pfind);
+        printf("Ingrese el PATH del archivo de socios en formato .csv: ");
+        scanf("%s",pathArchCsv);
+        txtABin(pathArchCsv,"archivo/socios.dat");
+        cargarIndiceDesdeArchivoMaestro(pathArchCsv,&indiceSocios);
+    } else
+    {
+        indCargar(&indiceSocios,"archivo/socios.idx");
     }
-    free(reg);
+
+
+
+    fclose(pIdx);
     return 0;
 }

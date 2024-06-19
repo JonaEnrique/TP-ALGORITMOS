@@ -28,5 +28,4 @@ void indVaciar (tIndice* ind);
 int indRecorrer (const tIndice* ind, Accion accion, void* param);
 //: Recorre el índice en orden y llama a acción para cada registro del mismo.
 
-
 #endif // INDICE_H_INCLUDED

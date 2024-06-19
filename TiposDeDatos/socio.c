@@ -32,3 +32,31 @@ int esEstadoValido(char estado)
 }
 
 //funcion comparacion
+
+void mostrarSocio(const char* pathArch)
+{
+    tSocio actSocio;
+    FILE* pf = fopen("archivos/socios.dat","rb");
+    fread(&actSocio,sizeof(tSocio),1,pf);
+    while(!feof(pf))
+    {
+        printf("%ld %s %s %d/%d/%d %c %d/%d/%d %s %d/%d/%d %c\n",
+            actSocio.dni,
+            actSocio.apellidos,
+            actSocio.nombres,
+            actSocio.fechaNacimiento.dia,
+            actSocio.fechaNacimiento.mes,
+            actSocio.fechaNacimiento.anio,
+            actSocio.sexo,
+            actSocio.fechaAfiliacion.dia,
+            actSocio.fechaAfiliacion.mes,
+            actSocio.fechaAfiliacion.anio,
+            actSocio.categoria,
+            actSocio.fechaUltCuotaPaga.dia,
+            actSocio.fechaUltCuotaPaga.mes,
+            actSocio.fechaUltCuotaPaga.anio,
+            actSocio.estado);
+        fread(&actSocio,sizeof(tSocio),1,pf);
+    }
+    return;
+}

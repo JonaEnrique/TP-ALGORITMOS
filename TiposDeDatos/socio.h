@@ -1,6 +1,7 @@
 #ifndef SOCIO_H_INCLUDED
 #define SOCIO_H_INCLUDED
 #include "fecha.h"
+#include <stdio.h>
 
 typedef struct Socio
 {
@@ -20,5 +21,6 @@ int esDniValido(long);
 int esSexoValido(char);
 int esCategoriaValida(char[10]);
 int esEstadoValido(char);
+void mostrarSocio(const char* pathArch);
 
 #endif // SOCIO_H_INCLUDED

@@ -70,43 +70,21 @@ void trozarCamposLongVariable(tSocio* actSocio,char* registro)
     sscanf(registro,"%ld",&actSocio->dni);
 }
 
-int construirIndice(const char* pathBin)
+int cargarIndiceDesdeArchivoMaestro(const char* pathArch,tIndice* ind)
 {
-    unsigned n=0;
-    FILE *pIdx,*pBin;
-    tSocio regSocio;
-    void* regInd;
-    regInd = malloc(sizeof(long)+sizeof(unsigned));
-    if(!regInd)
-        return SIN_MEM;
-
-    //crea archivo de indices a partir del archivo de datos de socios
-    pBin = fopen(pathBin,"rb");
-    pIdx = fopen("archivos/socios.idx","wb");
-    if(!pIdx || !pBin)
-    {
-        fclose(pBin);
-        fclose(pIdx);
+    tSocio actSocio;
+    unsigned nroReg = 0;
+    FILE* pf = fopen(pathArch,"rb");
+    if(!pf)
         return ERR_ARCH;
-    }
 
-    while(fread(&regSocio,sizeof(tSocio),1,pBin))
+    fread(&actSocio,sizeof(tSocio),1,pf);
+    while(!feof(pf))
     {
-        memcpy(regInd,&regSocio.dni,sizeof(long));
-        memcpy(regInd+sizeof(long),&n,sizeof(unsigned));
-        n++;
-        fwrite(regInd,sizeof(long)+sizeof(unsigned),1,pIdx);
+        indInsertar(ind,&actSocio.dni,nroReg++);
+        fread(&actSocio,sizeof(tSocio),1,pf);
     }
-    //Ordenar usando Qsort
-    //qsort(pIdx,n,sizeof(long)+sizeof(unsigned),compararUnsigned);
-    free(regInd);
-    return TODO_OK;
-}
 
-int compararUnsigned(const void* a,const void* b)
-{
-    unsigned *c,*d;
-    c=(unsigned*)a+sizeof(long);
-    d=(unsigned*)b+sizeof(long);
-    return *c-*d;
+    fclose(pf);
+    return TODO_OK;
 }
