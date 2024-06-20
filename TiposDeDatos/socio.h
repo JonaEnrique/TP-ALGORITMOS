@@ -21,6 +21,6 @@ int esDniValido(long);
 int esSexoValido(char);
 int esCategoriaValida(char[10]);
 int esEstadoValido(char);
-void mostrarSocio(const char* pathArch);
+void mostrarArchivosSocios(const char* pathArch);
 
 #endif // SOCIO_H_INCLUDED

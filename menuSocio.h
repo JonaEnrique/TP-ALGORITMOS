@@ -24,6 +24,8 @@ void socio_Lista_Ordenada(const char *path_Socios, tIndice *indSocio);
 void socio_Modificar(const char *path_Socios, tIndice *indSocio);
 void socio_Top10(const char *path_Socios, tIndice *indSocio, tFecha *fecha_proceso);
 void socio_Nuevo(tSocio *nueSocio);
+int  socio_Validacion(tSocio *nueSocio); // valido todos los parametros que se necesite
+void socio_GrabarNuevo(const char *path_Socios, tSocio *nueSocio);
 
 
 #endif // MENUSOCIO_H_INCLUDED

@@ -22,6 +22,29 @@ void menu_Socios(const char* path_Socios, tIndice *ind_Socio, const tFecha *fech
 }
 void socio_Alta(const char *path_Socios, tIndice *indSocio){
     tSocio nueSocio;
+    unsigned nroReg;
+
+    printf("Ingrese DNI del socio\n"); //pido el DNI
+    scanf("%ld", &nueSocio.dni);
+
+    if(TODO_OK == esDniValido(nueSocio.dni)){
+        if(TODO_OK != indBuscar(indSocio, (void*)&nueSocio.dni, &nroReg)){ //casteo el dni?
+            socio_Nuevo(&nueSocio); //nuevo socio por teclado
+            if(TODO_OK == socio_Validacion(&nueSocio)){
+                socio_GrabarNuevo(path_Socios, &nueSocio);
+                if(TODO_OK == indInsertar(indSocio, (void*)&nueSocio.dni, &nroReg)) //casteo el DNI?
+                    puts("Se agrego correctamente al nuevo socio\n");
+                else
+                    puts("Error al grabar en el indice");
+            }
+            else
+                puts("Datos invalidos del socio\n");
+        }
+        else
+            printf("El socio con DNI:%l ya esta registrado", nueSocio.dni);
+    }
+    else
+        puts("El dni no es valido\n");
 }
 void socio_Baja(const char *path_Socios, tIndice *indSocio, tFecha *fecha_proceso);
 void socio_Lista_Ordenada(const char *path_Socios, tIndice *indSocio);
@@ -55,4 +78,20 @@ void socio_Nuevo(tSocio *nueSocio){
     nueSocio->fechaDeBaja.dia=0;
     nueSocio->fechaDeBaja.mes=0;
     nueSocio->fechaDeBaja.anio=0;
+}
+int  socio_Validacion(tSocio *nueSocio){
+    if(esDniValido(nueSocio->dni) &&
+       esCategoriaValida(nueSocio->categoria) &&
+       esSexoValido(nueSocio->sexo) &&
+       esEstadoValido(nueSocio->estado))
+        return TODO_OK;
+    return 0;
+}
+void socio_GrabarNuevo(const char *path_Socios, tSocio *nueSocio){
+    FILE *pf=fopen(path_Socios, "r+b");
+    fseek(pf, 0L, SEEK_END); // muevo el puntero al final del archivo
+    //cuento los bytes que hay en todo el archivo
+    nroReg=ftell(pf)/sizeof(tSocio); //obtengo el nuero de registro para el nuevo socio
+    fwrite(&nueSocio, sizeof(tSocio), 1, fp);
+    fclose(fp);
 }

@@ -33,7 +33,7 @@ int esEstadoValido(char estado)
 
 //funcion comparacion
 
-void mostrarSocio(const char* pathArch)
+void mostrarArchivosSocios(const char* pathArch)
 {
     tSocio actSocio;
     FILE* pf = fopen("archivos/socios.dat","rb");

@@ -23,9 +23,9 @@ int main()
         indCargar(&indiceSocios,"archivo/socios.idx");
         fclose(pIdx);
     }
-    mostrarSocio("archivo/socios.dat");
+    mostrarArchivosSocios("archivo/socios.dat");
     //menu
-    //graba y guarda
+    //graba y guarda menu
 
 
     fclose(pIdx);
