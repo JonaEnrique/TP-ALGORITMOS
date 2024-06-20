@@ -21,8 +21,11 @@ int main()
     } else
     {
         indCargar(&indiceSocios,"archivo/socios.idx");
+        fclose(pIdx);
     }
-
+    mostrarSocio("archivo/socios.dat");
+    //menu
+    //graba y guarda
 
 
     fclose(pIdx);
