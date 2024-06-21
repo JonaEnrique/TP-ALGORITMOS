@@ -26,14 +26,30 @@ int esCategoriaValida(char categoria[10])
 
 int esEstadoValido(char estado)
 {
-    if( estado == 'A' || estado == 'I')
+    if( estado == 'A' || estado == 'B')
         return 1; //estado valido
     return 0; //estado invalido
 }
 
-//funcion comparacion
+int compararSocios(const void* regSocio1, const void* regSocio2)
+{
+    long dni1, dni2;
 
-void mostrarSocio(const char* pathArch)
+    memcpy(&dni1, regSocio1, sizeof(long));
+    memcpy(&dni2, regSocio2, sizeof(long));
+
+    return dni1 - dni2;
+}
+
+int compararPorFechaCuotaPaga(const void* regSocio1, const void* regSocio2)
+{
+    tSocio socio1, socio2;
+    socio1 = *(tSocio*)regSocio1;
+    socio2 = *(tSocio*)regSocio2;
+    return diferenciaDias(socio1.fechaUltCuotaPaga,socio2.fechaUltCuotaPaga);
+}
+
+void mostrarArchivosSocios(const char* pathArch)
 {
     tSocio actSocio;
     FILE* pf = fopen("archivos/socios.dat","rb");

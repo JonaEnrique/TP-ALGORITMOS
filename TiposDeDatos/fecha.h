@@ -9,5 +9,7 @@ typedef struct fecha
 }tFecha;
 
 int esFechaValida(tFecha);
+int diferenciaDias(tFecha fecha1,tFecha fecha2);
+int esBisiesto(int anio);
 
 #endif // FECHA_H_INCLUDED

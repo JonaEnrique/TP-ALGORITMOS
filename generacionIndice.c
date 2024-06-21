@@ -81,7 +81,8 @@ int cargarIndiceDesdeArchivoMaestro(const char* pathArch,tIndice* ind)
     fread(&actSocio,sizeof(tSocio),1,pf);
     while(!feof(pf))
     {
-        indInsertar(ind,&actSocio.dni,nroReg++);
+        if(actSocio.estado == 'A')
+            indInsertar(ind,&actSocio.dni,nroReg++);
         fread(&actSocio,sizeof(tSocio),1,pf);
     }
 

@@ -21,6 +21,8 @@ int esDniValido(long);
 int esSexoValido(char);
 int esCategoriaValida(char[10]);
 int esEstadoValido(char);
-void mostrarSocio(const char* pathArch);
+void mostrarArchivosSocios(const char* pathArch);
+int compararSocios(const void* regSocio1, const void* regSocio2);
+int compararPorFechaCuotaPaga(const void* regSocio1, const void* regSocio2);
 
 #endif // SOCIO_H_INCLUDED
