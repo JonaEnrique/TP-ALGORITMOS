@@ -26,7 +26,7 @@ int esCategoriaValida(char categoria[10])
 
 int esEstadoValido(char estado)
 {
-    if( estado == 'A' || estado == 'I')
+    if( estado == 'A' || estado == 'B')
         return 1; //estado valido
     return 0; //estado invalido
 }

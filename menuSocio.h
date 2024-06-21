@@ -26,6 +26,6 @@ void socio_Top10(const char *path_Socios, tIndice *indSocio, const tFecha *fecha
 void socio_Nuevo(tSocio *nueSocio, const tFecha *fecha_proceso);
 int  socio_Validacion(tSocio *nueSocio); // valido todos los parametros que se necesite
 unsigned socio_GrabarNuevo(const char *path_Socios, tSocio *nueSocio);
-
+void socio_Modificacion(tSocio *socio);
 
 #endif // MENUSOCIO_H_INCLUDED
