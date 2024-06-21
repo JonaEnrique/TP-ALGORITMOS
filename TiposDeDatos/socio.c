@@ -31,7 +31,15 @@ int esEstadoValido(char estado)
     return 0; //estado invalido
 }
 
-//funcion comparacion
+int compararSocios(const void* regSocio1, const void* regSocio2)
+{
+    long dni1, dni2;
+
+    memcpy(&dni1, regSocio1, sizeof(long));
+    memcpy(&dni2, regSocio2, sizeof(long));
+
+    return dni1 - dni2;
+}
 
 void mostrarArchivosSocios(const char* pathArch)
 {
