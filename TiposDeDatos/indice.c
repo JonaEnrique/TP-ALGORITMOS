@@ -1,5 +1,7 @@
 #include "indice.h"
 
+void escribirIndiceEnArchivo(void *pf,unsigned tam,unsigned n, void *pd);
+
 void indCrear (tIndice* ind, size_t tamClave, Cmp funcionComparacion)
 {
     crearArbol(&(ind->arbol));
@@ -56,7 +58,9 @@ int indGrabar (const tIndice* ind, const char* path)
 
     if(!pf)
         return ERR_ARCH;
-    recorrerEnOrdenArbol(&(ind->arbol),ind->tamClave+sizeof(unsigned),&pf,escribirIndiceEnArchivo);
+    //recorrerEnOrdenArbol(&(ind->arbol),ind->tamClave+sizeof(unsigned),&pf,escribirIndiceEnArchivo);
+    recorrerEnOrdenArbol(&(ind->arbol), &pf /* FILE**  */, escribirIndiceEnArchivo);
+
 
     fclose(pf);
     return TODO_OK;
@@ -71,12 +75,18 @@ void indVaciar (tIndice* ind)
 
 int indRecorrer (const tIndice* ind,Accion accion, void *param)
 {
-    recorrerEnOrdenArbol(&(ind->arbol),ind->tamClave+sizeof(unsigned),param,accion);
+    recorrerEnOrdenArbol(&(ind->arbol),param,accion);
     return TODO_OK;
 }
 
-void escribirIndiceEnArchivo(void *pf,unsigned tam,void *pd)
+void escribirIndiceEnArchivo(void *pd,unsigned tam,unsigned n, void *ppf)
 {
+    /*
     FILE **ppf = (FILE **)pf;
     fwrite(pd,tam,1,*ppf);
+    */
+
+    FILE **ppFile = (FILE **)ppf;
+
+    fwrite(pd, tam, 1, *ppFile);
 }

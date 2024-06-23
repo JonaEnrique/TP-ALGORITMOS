@@ -16,13 +16,32 @@ typedef struct sNodoArbol
 
 typedef tNodoArbol *tArbol;
 
-void crearArbol(tArbol *pA);
-int insertarArbol(tArbol *pA, const void *pd, unsigned tam, Cmp funcionComparacion);
-int buscarElemArbol(const tArbol *pA, void *pd, unsigned tam,Cmp funcionComparacion);
-int cargarArchivoBinOrdenadoArbol(tArbol *pA, const char * path,unsigned tamInfo);
-int eliminarElemArbol(tArbol *pA, void *pd, unsigned tam,Cmp funcionComparacion);
+void crearArbol(tArbol *pa);
+int insertarArbol(tArbol *pa, const void *pd, unsigned tam, Cmp funcionComparacion);
+int buscarElemArbol(const tArbol *pa, void *pd, unsigned tam,Cmp funcionComparacion);
+
+int cargarArchivoBinOrdenadoArbol(tArbol *pa, const char * path,unsigned tamInfo);
+unsigned leerDesdeArchivoBin(void ** d, void * pf, unsigned pos, void * params);
+int cargarDesdeDatosOrdenadosRec(tArbol * pa, void * ds, Leer leer, int li, int ls, void * params);
+int cargarDesdeDatosOrdenadosArbol(tArbol * p, void * ds, unsigned cantReg, Leer leer, void * params);
+
+
+
+int eliminarElemArbol(tArbol *pa, void *pd, unsigned tam,Cmp funcionComparacion);
+tNodoArbol ** buscarNodoArbol(const tArbol* pa, const void * d, Cmp funcionComparacion);
+unsigned alturaArbolBin(const tArbol* pa);
+int eliminarRaizArbol(tArbol *pa);
+tNodoArbol ** mayorNodoArbol(const tArbol * pa);
+tNodoArbol ** menorNodoArbol(const tArbol * pa);
+
+
 void vaciarArbol(tArbol* pA);
-void recorrerEnOrdenArbol(const tArbol *pA, unsigned param1, void *param2,Accion accion);
-void escribirIndiceEnArchivo(void *pf,unsigned tam,void *pd);
+//void recorrerEnOrdenArbol(const tArbol *pA, unsigned param1, void *param2,Accion accion);
+void recorrerEnOrdenRecArbol(const tArbol * pa, unsigned n, void *params, Accion accion);
+void recorrerEnOrdenArbol(const tArbol * pa, void * params, Accion accion);
+void recorrerEnOrdenInversoRecArbol(const tArbol * p, unsigned n, void* params, Accion accion);
+void recorrerEnOrdenInversoArbol(const tArbol * p, void * params, Accion accion);
+
+//void escribirIndiceEnArchivo(void *pf,unsigned tam,void *pd);
 
 #endif // ARBOL_H_INCLUDED

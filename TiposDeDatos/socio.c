@@ -31,6 +31,7 @@ int esEstadoValido(char estado)
     return 0; //estado invalido
 }
 
+
 int compararSocios(const void* regSocio1, const void* regSocio2)
 {
     long dni1, dni2;
@@ -40,6 +41,8 @@ int compararSocios(const void* regSocio1, const void* regSocio2)
 
     return dni1 - dni2;
 }
+
+
 
 int compararPorFechaCuotaPaga(const void* regSocio1, const void* regSocio2)
 {

@@ -97,38 +97,38 @@
 	<string.h>
 	<stdlib.h>
 
-1718911689 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\utilidades.h
+1719026268 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\utilidades.h
 
-1718919774 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\socio.h
+1718997495 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\socio.h
 	"fecha.h"
 	<stdio.h>
 
-1718911689 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\fecha.h
+1718997495 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\fecha.h
 
-1718911689 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\indice.h
+1719025908 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\indice.h
 	"Arbol.h"
 	"utilidades.h"
 
-1718911689 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\arbol.h
+1719084272 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\arbol.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"utilidades.h"
 
-1718911689 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\arbol.c
+1719109098 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\arbol.c
 	"Arbol.h"
 
-1718911689 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\fecha.c
+1718997495 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\fecha.c
 	"fecha.h"
 
-1718911689 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\indice.c
+1719085879 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\indice.c
 	"indice.h"
 
-1718919745 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\socio.c
+1719089793 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\socio.c
 	"socio.h"
 	<string.h>
 
-1718920750 source:c:\users\jonathane\desktop\tp-algoritmos\main.c
+1719097914 source:c:\users\jonathane\desktop\tp-algoritmos\main.c
 	<stdio.h>
 	<stdlib.h>
 	"TiposDeDatos\Arbol.h"
@@ -136,10 +136,10 @@
 	"TiposDeDatos\socio.h"
 	"generacionIndice.h"
 
-1718920396 source:c:\users\jonathane\desktop\tp-algoritmos\manusocio.c
+1718997495 source:c:\users\jonathane\desktop\tp-algoritmos\manusocio.c
 	"menuSocio.h"
 
-1718920280 c:\users\jonathane\desktop\tp-algoritmos\menusocio.h
+1718997495 c:\users\jonathane\desktop\tp-algoritmos\menusocio.h
 	"TiposDeDatos/socio.h"
 	"TiposDeDatos/indice.h"
 
