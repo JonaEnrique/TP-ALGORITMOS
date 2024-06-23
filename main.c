@@ -30,19 +30,26 @@ int main()
         cargarIndiceDesdeArchivoMaestro("archivos/socios.dat", &indiceSocios);
     } else
     {
-        puts("Indice antes de cargar a memoria:");
+        fclose(pIdx);
+
+        puts("\nArchivo socios.dat:\n");
+        mostrarArchivosSocios("archivos/socios.dat");
+
+        puts("\nArchivo socios.idx antes de indCargar:\n");
         mostrarArchivosSociosIdx("archivos/socios.idx");
+
         indCargar(&indiceSocios,"archivos/socios.idx");
-        puts("\nArchivo socios.dat:");
-        mostrarArchivosSocios("archivo/socios.dat");
-        //fclose(pIdx);
+
+        puts("\nArchivo socios.idx despues de indCargar:\n");
+        mostrarArchivosSociosIdx("archivos/socios.idx");
     }
 
-//    printf("\n\n\n\n");
-//    recorrerEnOrdenInversoArbol(&(indiceSocios.arbol), NULL, imprimirConForma);
-//    printf("\n\n\n\n");
+    printf("\n\n\n\n");
+    recorrerEnOrdenInversoArbol(&(indiceSocios.arbol), NULL, imprimirConForma);
+    printf("\n\n\n\n");
 
     indGrabar(&indiceSocios, "archivos/socios.idx");
+
     puts("\nIndice despues de grabar en archivo:");
     mostrarArchivosSociosIdx("archivos/socios.idx");
 
@@ -56,8 +63,10 @@ int main()
 
 void imprimirConForma(void * info, unsigned tam, unsigned n, void * params)
 {
-    unsigned* i = (unsigned*) info;
-    printf("%*s-%3u-\n",n*3,"", *i);
+    long* dni = (long*) info;
+    unsigned* tamInfo = (unsigned*)(info + sizeof(long));
+
+    printf("%*s-%3ld %u-\n",n*3,"", *dni, *tamInfo);
 }
 
 void imprimir(void * info, unsigned tam, unsigned n, void * params)
@@ -69,7 +78,15 @@ void imprimir(void * info, unsigned tam, unsigned n, void * params)
 void mostrarArchivosSociosIdx(const char* pathArch)
 {
     void* actSocio = malloc(sizeof(long) + sizeof(unsigned));
+    if(!actSocio)return;
     FILE* pf = fopen("archivos/socios.idx","rb");
+
+    if(!pf)
+    {
+        printf("No se pudo abrir el archivo.\n");
+        return;
+    }
+
     fread(actSocio,sizeof(long) + sizeof(unsigned),1,pf);
     while(!feof(pf))
     {

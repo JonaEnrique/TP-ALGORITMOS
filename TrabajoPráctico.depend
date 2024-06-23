@@ -207,3 +207,60 @@
 	"socio.h"
 	<string.h>
 
+1719155522 source:c:\users\jonathanenrique\desktop\tp-algoritmos\generacionindice.c
+	"generacionIndice.h"
+
+1718761378 c:\users\jonathanenrique\desktop\tp-algoritmos\generacionindice.h
+	"TiposDeDatos/utilidades.h"
+	"TiposDeDatos/socio.h"
+	"TiposDeDatos/indice.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
+1719155522 c:\users\jonathanenrique\desktop\tp-algoritmos\tiposdedatos\utilidades.h
+
+1719155522 c:\users\jonathanenrique\desktop\tp-algoritmos\tiposdedatos\socio.h
+	"fecha.h"
+	<stdio.h>
+
+1719155522 c:\users\jonathanenrique\desktop\tp-algoritmos\tiposdedatos\fecha.h
+
+1719161917 c:\users\jonathanenrique\desktop\tp-algoritmos\tiposdedatos\indice.h
+	"Arbol.h"
+	"utilidades.h"
+
+1719155522 c:\users\jonathanenrique\desktop\tp-algoritmos\tiposdedatos\arbol.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utilidades.h"
+
+1719162345 source:c:\users\jonathanenrique\desktop\tp-algoritmos\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TiposDeDatos\Arbol.h"
+	"TiposDeDatos\fecha.h"
+	"TiposDeDatos\socio.h"
+	"generacionIndice.h"
+
+1719155522 source:c:\users\jonathanenrique\desktop\tp-algoritmos\manusocio.c
+	"menuSocio.h"
+
+1719155522 c:\users\jonathanenrique\desktop\tp-algoritmos\menusocio.h
+	"TiposDeDatos/socio.h"
+	"TiposDeDatos/indice.h"
+
+1719172534 source:c:\users\jonathanenrique\desktop\tp-algoritmos\tiposdedatos\arbol.c
+	"Arbol.h"
+
+1719155522 source:c:\users\jonathanenrique\desktop\tp-algoritmos\tiposdedatos\fecha.c
+	"fecha.h"
+
+1719156536 source:c:\users\jonathanenrique\desktop\tp-algoritmos\tiposdedatos\indice.c
+	"indice.h"
+
+1719155522 source:c:\users\jonathanenrique\desktop\tp-algoritmos\tiposdedatos\socio.c
+	"socio.h"
+	<string.h>
+

@@ -7,7 +7,7 @@
 typedef struct
 {
     tArbol arbol;
-    size_t tamClave;
+    unsigned tamClave;
     void *regInd;
     Cmp funcionComparacion;
 } tIndice;

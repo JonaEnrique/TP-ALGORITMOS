@@ -4,6 +4,7 @@ void escribirIndiceEnArchivo(void *pf,unsigned tam,unsigned n, void *pd);
 
 void indCrear (tIndice* ind, size_t tamClave, Cmp funcionComparacion)
 {
+    crearArbol(&(ind->arbol));
     ind->tamClave=tamClave;
     ind->regInd=malloc(ind->tamClave+sizeof(unsigned));
     if(ind->regInd==NULL)
@@ -11,7 +12,6 @@ void indCrear (tIndice* ind, size_t tamClave, Cmp funcionComparacion)
         printf("SIN MEMORIA PARA CREAR EL REGIND\n");
         return;
     }
-    crearArbol(&(ind->arbol));
     ind->funcionComparacion=funcionComparacion;
 
 }

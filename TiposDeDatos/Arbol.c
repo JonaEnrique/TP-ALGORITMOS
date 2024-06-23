@@ -76,7 +76,9 @@ unsigned leerDesdeArchivoBin(void ** d, void * pf, unsigned pos, void * params)
     if(!*d)
         return 0;
     fseek((FILE*)pf, pos*tam, SEEK_SET);
-    return fread(*d, tam, 1, (FILE*)pf);
+    fread(*d, tam, 1, (FILE*)pf);
+
+    return tam;
 }
 
 
@@ -89,6 +91,7 @@ int cargarDesdeDatosOrdenadosRec(tArbol * pa, void * ds, Leer leer, int li, int 
 
     (*pa) = (tNodoArbol*) malloc(sizeof(tNodoArbol));
     if (!*pa || !((*pa)->tamInfo = leer(&(*pa)->info, ds, m, params)))
+
     {
         free(*pa);
         return SIN_MEM;
@@ -114,7 +117,8 @@ int cargarArchivoBinOrdenadoArbol(tArbol *pa, const char * path, unsigned tamInf
         return ERR_ARCH;
     fseek(pf, 0L, SEEK_END);
     cantReg = ftell(pf)/tamInfo;
-    r = cargarDesdeDatosOrdenadosRec(pa, pf, leerDesdeArchivoBin, 1, cantReg, &tamInfo);
+    rewind(pf);
+    r = cargarDesdeDatosOrdenadosRec(pa, pf, leerDesdeArchivoBin, 0, cantReg - 1, &tamInfo);
     fclose(pf);
     return r;
 }
@@ -123,7 +127,7 @@ int cargarDesdeDatosOrdenadosArbol(tArbol * p, void * ds, unsigned cantReg, Leer
 {
     if(*p || !ds)
         return 0;
-    return cargarDesdeDatosOrdenadosRec(p, ds, leer, 1, cantReg, params);
+    return cargarDesdeDatosOrdenadosRec(p, ds, leer, 0, cantReg - 1, params);
 }
 
 
