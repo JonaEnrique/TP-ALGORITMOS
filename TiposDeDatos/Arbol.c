@@ -114,7 +114,7 @@ int cargarArchivoBinOrdenadoArbol(tArbol *pa, const char * path, unsigned tamInf
         return ERR_ARCH;
     fseek(pf, 0L, SEEK_END);
     cantReg = ftell(pf)/tamInfo;
-    r = cargarDesdeDatosOrdenadosRec(pa, pf, leerDesdeArchivoBin, 0, cantReg-1, &tamInfo);
+    r = cargarDesdeDatosOrdenadosRec(pa, pf, leerDesdeArchivoBin, 1, cantReg, &tamInfo);
     fclose(pf);
     return r;
 }
@@ -123,7 +123,7 @@ int cargarDesdeDatosOrdenadosArbol(tArbol * p, void * ds, unsigned cantReg, Leer
 {
     if(*p || !ds)
         return 0;
-    return cargarDesdeDatosOrdenadosRec(p, ds, leer, 0, cantReg-1, params);
+    return cargarDesdeDatosOrdenadosRec(p, ds, leer, 1, cantReg, params);
 }
 
 

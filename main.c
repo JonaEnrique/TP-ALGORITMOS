@@ -15,7 +15,7 @@ int main()
     char pathArchCsv[50];
     tIndice indiceSocios;
 
-    indCrear(&indiceSocios,sizeof(long),compararSocios);
+    indCrear(&indiceSocios, sizeof(long), compararSocios);
     pIdx = fopen("archivos/socios.idx","rb");
 
     if(!pIdx)
@@ -23,19 +23,27 @@ int main()
         printf("Ingrese el PATH del archivo de socios en formato .csv: ");
         scanf("%s",pathArchCsv);
         txtABin(pathArchCsv,"archivos/socios.dat");
+        //---------------------------------------
+        puts("archivo binario socios.dat\n");
+        mostrarArchivosSocios("archivos/socios.dat");
+        //---------------------------------------
         cargarIndiceDesdeArchivoMaestro("archivos/socios.dat", &indiceSocios);
     } else
     {
+        puts("Indice antes de cargar a memoria:");
+        mostrarArchivosSociosIdx("archivos/socios.idx");
         indCargar(&indiceSocios,"archivos/socios.idx");
-        fclose(pIdx);
+        puts("\nArchivo socios.dat:");
+        mostrarArchivosSocios("archivo/socios.dat");
+        //fclose(pIdx);
     }
 
-    mostrarArchivosSocios("archivo/socios.dat");
-    printf("\n\n\n\n");
-    recorrerEnOrdenInversoArbol(&(indiceSocios.arbol), NULL, imprimirConForma);
-    printf("\n\n\n\n");
+//    printf("\n\n\n\n");
+//    recorrerEnOrdenInversoArbol(&(indiceSocios.arbol), NULL, imprimirConForma);
+//    printf("\n\n\n\n");
 
     indGrabar(&indiceSocios, "archivos/socios.idx");
+    puts("\nIndice despues de grabar en archivo:");
     mostrarArchivosSociosIdx("archivos/socios.idx");
 
     //menu
@@ -72,6 +80,7 @@ void mostrarArchivosSociosIdx(const char* pathArch)
     }
 
     free(actSocio);
+    fclose(pf);
     return;
 }
 

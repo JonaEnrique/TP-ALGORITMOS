@@ -1,4 +1,4 @@
-#ifndef MENUSOCIO_H_INCLUDED
+    #ifndef MENUSOCIO_H_INCLUDED
 #define MENUSOCIO_H_INCLUDED
 
 #include "TiposDeDatos/socio.h"

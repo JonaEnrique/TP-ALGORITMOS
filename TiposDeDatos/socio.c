@@ -77,5 +77,6 @@ void mostrarArchivosSocios(const char* pathArch)
             actSocio.estado);
         fread(&actSocio,sizeof(tSocio),1,pf);
     }
+    fclose(pf);
     return;
 }
