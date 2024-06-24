@@ -4,7 +4,11 @@
 int esDniValido(long dni)
 {
     if( dni > 100000000 || dni < 10000 )
+    {
+        puts("DNI invalida");
         return 0; //dni invalido
+    }
+
     return 1; //dni valido
 }
 
@@ -12,15 +16,19 @@ int esSexoValido(char sexo)
 {
     if( sexo == 'F' || sexo == 'M' || sexo == 'O')
         return 1; //sexo valido
+
+    puts("SEXO invalida");
     return 0; //sexo invalido
 }
 
 int esCategoriaValida(char categoria[10])
 {
 
-    if( !(strcmp(categoria,"MENOR") || strcmp(categoria,"CADETE") || strcmp(categoria,"ADULTO") || strcmp(categoria,"VITALICIO")
-       || strcmp(categoria,"HONORARIO") || strcmp(categoria,"JUBILADO")))
+    if( !(strcmp(categoria,"MENOR") && strcmp(categoria,"CADETE") && strcmp(categoria,"ADULTO") && strcmp(categoria,"VITALICIO")
+       && strcmp(categoria,"HONORARIO") && strcmp(categoria,"JUBILADO")) )
         return 1; //categoria valida
+
+    puts("CATEGORIA invalida");
     return 0; //categoria invalida
 }
 
@@ -28,6 +36,8 @@ int esEstadoValido(char estado)
 {
     if( estado == 'A' || estado == 'B')
         return 1; //estado valido
+
+    puts("ESTADO invalida");
     return 0; //estado invalido
 }
 

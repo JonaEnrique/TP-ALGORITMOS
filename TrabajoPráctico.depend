@@ -97,7 +97,7 @@
 	<string.h>
 	<stdlib.h>
 
-1719026268 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\utilidades.h
+1719185860 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\utilidades.h
 
 1718997495 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\socio.h
 	"fecha.h"
@@ -105,7 +105,7 @@
 
 1718997495 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\fecha.h
 
-1719025908 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\indice.h
+1719173202 c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\indice.h
 	"Arbol.h"
 	"utilidades.h"
 
@@ -115,33 +115,35 @@
 	<string.h>
 	"utilidades.h"
 
-1719109098 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\arbol.c
+1719183336 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\arbol.c
 	"Arbol.h"
 
-1718997495 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\fecha.c
+1719181285 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\fecha.c
 	"fecha.h"
 
-1719085879 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\indice.c
+1719183503 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\indice.c
 	"indice.h"
 
-1719089793 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\socio.c
+1719181288 source:c:\users\jonathane\desktop\tp-algoritmos\tiposdedatos\socio.c
 	"socio.h"
 	<string.h>
 
-1719097914 source:c:\users\jonathane\desktop\tp-algoritmos\main.c
+1719185838 source:c:\users\jonathane\desktop\tp-algoritmos\main.c
 	<stdio.h>
 	<stdlib.h>
 	"TiposDeDatos\Arbol.h"
 	"TiposDeDatos\fecha.h"
 	"TiposDeDatos\socio.h"
+	"menuSocio.h"
 	"generacionIndice.h"
 
-1718997495 source:c:\users\jonathane\desktop\tp-algoritmos\manusocio.c
+1719187574 source:c:\users\jonathane\desktop\tp-algoritmos\manusocio.c
 	"menuSocio.h"
 
-1718997495 c:\users\jonathane\desktop\tp-algoritmos\menusocio.h
+1719187565 c:\users\jonathane\desktop\tp-algoritmos\menusocio.h
 	"TiposDeDatos/socio.h"
 	"TiposDeDatos/indice.h"
+	<ctype.h>
 
 1718996438 source:c:\users\rodrigovaraldo\desktop\tp-algoritmos\manusocio.c
 	"menuSocio.h"

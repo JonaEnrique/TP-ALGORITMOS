@@ -54,10 +54,9 @@ int buscarElemArbol(const tArbol *pa, void *pd, unsigned tam,Cmp funcionComparac
 
     while(*pa &&  (comp = funcionComparacion(pd, (*pa)->info)) )
     {
-        if((comp = funcionComparacion(pd, (*pa)->info)) > 0)
+        if(comp > 0)
             pa = &(*pa)->der;
         else
-
             pa = &(*pa)->izq;
     }
 
@@ -76,9 +75,8 @@ unsigned leerDesdeArchivoBin(void ** d, void * pf, unsigned pos, void * params)
     if(!*d)
         return 0;
     fseek((FILE*)pf, pos*tam, SEEK_SET);
-    fread(*d, tam, 1, (FILE*)pf);
 
-    return tam;
+    return (fread(*d, tam, 1, (FILE*)pf)) ? tam : 0;
 }
 
 
@@ -117,7 +115,6 @@ int cargarArchivoBinOrdenadoArbol(tArbol *pa, const char * path, unsigned tamInf
         return ERR_ARCH;
     fseek(pf, 0L, SEEK_END);
     cantReg = ftell(pf)/tamInfo;
-    rewind(pf);
     r = cargarDesdeDatosOrdenadosRec(pa, pf, leerDesdeArchivoBin, 0, cantReg - 1, &tamInfo);
     fclose(pf);
     return r;

@@ -3,9 +3,10 @@
 
 #include "TiposDeDatos/socio.h"
 #include "TiposDeDatos/indice.h"
+#include <ctype.h>
 
-#define MENU_MENSAJE "Menu de Socios\n\n"                           \
-                     "Elija una opcion:\n\n"                        \
+#define MENU_MENSAJE "Menu de Socios\n"                           \
+                     "Elija una opcion:\n"                        \
                      "A - Alta de un socio\n"                       \
                      "B - Baja de un socio\n"                       \
                      "L - Listados ordenada de socios\n"            \
@@ -27,5 +28,7 @@ void socio_Nuevo(tSocio *nueSocio, const tFecha *fecha_proceso);
 int  socio_Validacion(tSocio *nueSocio); // valido todos los parametros que se necesite
 unsigned socio_GrabarNuevo(const char *path_Socios, tSocio *nueSocio);
 void socio_Modificacion(tSocio *socio);
+
+void mostrarSocioDesdeArchivoAbierto(void *pd,unsigned tam,unsigned n, void *pf);
 
 #endif // MENUSOCIO_H_INCLUDED

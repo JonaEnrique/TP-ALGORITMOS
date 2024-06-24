@@ -1,6 +1,6 @@
 #include "indice.h"
 
-void escribirIndiceEnArchivo(void *pf,unsigned tam,unsigned n, void *pd);
+void escribirIndiceEnArchivo(void *pd,unsigned tam,unsigned n, void *pf);
 
 void indCrear (tIndice* ind, size_t tamClave, Cmp funcionComparacion)
 {
@@ -41,7 +41,7 @@ int indBuscar (const tIndice* ind, void *clave, unsigned *nroReg)
 {
    //se copia la clave en el regInd del indice
     memcpy(ind->regInd,clave,ind->tamClave);
-    if( buscarElemArbol(&(ind->arbol),ind->regInd,ind->tamClave,ind->funcionComparacion) != TODO_OK )
+    if( buscarElemArbol(&(ind->arbol),ind->regInd,ind->tamClave+sizeof(unsigned),ind->funcionComparacion) != TODO_OK )
         return NO_ENCONTRADO;
     memcpy(nroReg,ind->regInd+ind->tamClave,sizeof(unsigned));
     return TODO_OK;
@@ -60,7 +60,7 @@ int indGrabar (const tIndice* ind, const char* path)
     if(!pf)
         return ERR_ARCH;
     //recorrerEnOrdenArbol(&(ind->arbol),ind->tamClave+sizeof(unsigned),&pf,escribirIndiceEnArchivo);
-    recorrerEnOrdenArbol(&(ind->arbol), &pf /* FILE**  */, escribirIndiceEnArchivo);
+    recorrerEnOrdenArbol(&(ind->arbol), pf /* FILE**  */, escribirIndiceEnArchivo);
 
 
     fclose(pf);
@@ -80,14 +80,7 @@ int indRecorrer (const tIndice* ind,Accion accion, void *param)
     return TODO_OK;
 }
 
-void escribirIndiceEnArchivo(void *pd,unsigned tam,unsigned n, void *ppf)
+void escribirIndiceEnArchivo(void *pd,unsigned tam,unsigned n, void *pf)
 {
-    /*
-    FILE **ppf = (FILE **)pf;
-    fwrite(pd,tam,1,*ppf);
-    */
-
-    FILE **ppFile = (FILE **)ppf;
-
-    fwrite(pd, tam, 1, *ppFile);
+    fwrite(pd, tam, 1, (FILE*)pf);
 }
